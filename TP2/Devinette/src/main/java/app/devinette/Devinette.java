@@ -2,10 +2,10 @@ package app.devinette;
 
 import java.util.Random;
 import java.util.Scanner;
-//import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.Range;
 
 public class Devinette {
-    int nombre;
+    @Range(min = 1, max = 100) int nombre;
     int proposition;
     String message;
 
@@ -36,7 +36,6 @@ public class Devinette {
     // logique metier
     // mise a jour de message en fonction de proposition
     public void update() {
-        System.out.println("prop : " + proposition + "\nnombre : " + nombre);
         if (nombre == proposition) {message = "C'est gagné, yes we did it, c'est gagné houra !";}
         else {
             message = "Je pense à un nombre entre 1 et 100 ("+nombre+"). Pouvez-vous le trouver ?";

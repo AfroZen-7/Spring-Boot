@@ -18,6 +18,9 @@
         <p><input type="text" size="2" th:field="*{proposition}">
             <input name="valider" type="submit" value="Ok"></p>
         <p><input name="nouveau" type="submit" value="Recommencer"></p>
+        <ul th:if="${#fields.hasErrors('*')}">
+            <li th:each="err : ${#fields.errors('*')}" th:text="${err}">La saisie est incorrecte</li>
+        </ul>
     </form>
 </div>
 </body>
